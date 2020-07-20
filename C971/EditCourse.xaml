@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C971.EditCourse">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image Source="wgutitle.png"
+       WidthRequest="{OnPlatform iOS=300, Android=250}"
+       HorizontalOptions="Center" Margin="0, 30, 0, 0"/>
+            <TableView Margin="10,30,10,0">
+                <TableSection Title="Edit Course">
+                    <EntryCell Label="Course Name:" x:Name="CourseName"/>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="13, 0" >
+                            <Label Text="Course Status:" VerticalOptions="Center"/>
+                            <Picker x:Name="CourseStatus" Title="Choose Status">
+                                <Picker.Items>
+                                    <x:String>In-Progress</x:String>
+                                    <x:String>Completed</x:String>
+                                    <x:String>Dropped</x:String>
+                                    <x:String>Plan to Take</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="13, 0">
+                            <Label Text="Start Date"/>
+                            <DatePicker x:Name="StartDate"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="13, 0">
+                            <Label Text="End Date"/>
+                            <DatePicker x:Name="EndDate"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <EntryCell Label="Instructor Name:" x:Name="InstructorName"/>
+                    <EntryCell Label="Instructor Phone" x:Name="InstructorPhone"/>
+                    <EntryCell Label="Instructor Email" x:Name="InstructorEmail"/>
+                    <SwitchCell Text="Enable Notifications" x:Name="EnableNotifications"/>
+                    <EntryCell x:Name="Notes" Label="Notes:"/>
+                </TableSection>
+            </TableView>
+            <Button Text="Save" Clicked="Edit_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

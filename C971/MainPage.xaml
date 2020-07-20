@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+             
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:C971"
+             x:Class="C971.MainPage">
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem Text="Add Term" Clicked="Add_Term"/>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout x:Name="mainStack">
+        <Image Source="wgutitle.png"
+       WidthRequest="{OnPlatform iOS=300, Android=250}"
+       HorizontalOptions="Center" Margin="0, 30, 0, 20"/>
+        <StackLayout VerticalOptions="Start" Orientation="Horizontal" HorizontalOptions="Center" Margin="0, 0, 0, 20">
+            <!-- Place new controls here -->
+        </StackLayout>
+        <StackLayout VerticalOptions="CenterAndExpand" x:Name="terms">
+            <ListView x:Name="termListView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell IsEnabled="True">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                <Label Text="{Binding Title}" VerticalOptions="Center" TextColor="Blue" />
+                                <Label Text="{Binding StartDate, StringFormat='{}{0:MM/dd/yyyy}'}"  VerticalOptions="Center"/>
+                                <Label Text="{Binding EndDate, StringFormat='{}{0:MM/dd/yyyy}'}" VerticalOptions="Center"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </StackLayout>
+
+
+</ContentPage>

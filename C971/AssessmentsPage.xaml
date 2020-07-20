@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage Title="Assessmenets"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C971.AssessmentsPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image Source="wgutitle.png"
+       WidthRequest="{OnPlatform iOS=300, Android=250}"
+       HorizontalOptions="Center" Margin="0, 30, 0, 20"/>
+            <StackLayout VerticalOptions="FillAndExpand" x:Name="Assessments">
+                <ListView x:Name="assessmentsListView" VerticalOptions="Center" Margin="10,30,10,0">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell IsEnabled="True">
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                    <Label Text="{Binding Type}" VerticalOptions="Center"/>
+                                    <Label Text="Assessment" VerticalOptions="Center"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <Button Text="Add Assessment" VerticalOptions="End" Clicked="Button_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
